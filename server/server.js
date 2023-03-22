@@ -1,4 +1,3 @@
-
 const express = require("express");
 
 const PORT = process.env.PORT || 3001;
@@ -12,18 +11,13 @@ const db = require("./config/connection");
 
 
 app.get("/", (req, res, next) => {
-
     db.query("SELECT * FROM username", (err, data) =>{
-
         if(err){
             throw err;
         }else{
             res.json(data);
-
         }
-            
     })
-
 })
 
 
