@@ -2,11 +2,9 @@ DROP DATABASE IF EXISTS social_media;
 CREATE DATABASE social_media;
 USE social_media;
 
-DROP TABLE IF EXISTS username;
 
-
-CREATE TABLE username(
-    id INT NOT NULL,
+CREATE TABLE username (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
 
