@@ -1,0 +1,10 @@
+.header{
+    border:1px solid black;
+    margin: 0;
+    width: 100vw;
+    height: 10vh;
+}
+
+h1{
+    margin-left:20px;
+}
