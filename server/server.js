@@ -1,13 +1,31 @@
-const express = require("express");
 
+const express = require("express");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const connection = require("./config/connection")
+const db = require("./config/connection");
+
+
+app.get("/", (req, res, next) => {
+
+    db.query("SELECT * FROM username", (err, data) =>{
+
+        if(err){
+            throw err;
+        }else{
+            res.json(data);
+
+        }
+            
+    })
+
+})
+
 
 
 
