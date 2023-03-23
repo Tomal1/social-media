@@ -1,0 +1,36 @@
+
+.signUpCon{
+   display: flex;
+   justify-content: center;
+   text-align: center;
+}
+
+.signUpForm{
+   margin:15vh 0px 0px 0px;
+   border: 1px solid black;
+   height:50vh;
+   width: 300px;
+   border-radius: 5%;
+}
+
+input{
+   width: 250px;
+   margin-bottom:5%;
+   height:40px;
+   background:white;
+   color:black;
+   text-align: center;
+}
+
+.Email2{
+  margin-top: 10%;
+}
+
+
+.backToLogin:hover{
+   scale:1.05;
+}
+
+.SignUp2:hover{
+   scale:1.05;
+}

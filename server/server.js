@@ -11,11 +11,11 @@ const db = require("./config/connection");
 
 
 app.get("/", (req, res, next) => {
-    db.query("SELECT * FROM username", (err, data) =>{
+    db.query("SELECT * FROM username", (err, result) =>{
         if(err){
             throw err;
         }else{
-            res.json(data);
+            return res.json(result);
         }
     })
 })
