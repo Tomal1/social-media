@@ -21,6 +21,17 @@ app.get("/", (req, res, next) => {
 })
 
 
+app.post("/signup", (req,res)=>{
+    db.query("INSERT INTO user (username, email, password) VALUES (?,?,?)", [username, email, password], (err, result)=>{
+        if(err){
+            throw err;
+        } else {
+            alert("new login details have been stored")
+        }
+    })
+})
+
+
 
 
 
