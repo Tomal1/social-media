@@ -9,6 +9,7 @@ import Header from './Components/Header';
 
 
 
+
 function App() {
 
 
@@ -26,9 +27,7 @@ function App() {
         <Route path="/" element={<Login/>}/>
         <Route path="/Signup" element={<Signup/>}/>
       </Routes>
-      
     </Router>
-
 
     </>
   );
