@@ -1,12 +1,26 @@
 import React, { useState} from "react";
 import "./signup.css";
 
+//need this to replicate the fetch command
+import Axios from "axios";
+
 
 const Signup = () =>{
 
-    const [usenameReg, setUsernameReg] = useState(""); 
+    const [usernameReg, setUsernameReg] = useState(""); 
     const [emailReg, setEmailReg] = useState(""); 
     const [passwordReg, setPasswordReg] = useState(""); 
+
+    const register = () =>{
+        Axios.post("http://localhost:3001/Signup", 
+        {
+            username: usernameReg, 
+            email:emailReg, 
+            password:passwordReg 
+        }).then(data =>{
+            console.log(data)
+        })
+    }
 
     return(
         <>
@@ -32,7 +46,11 @@ const Signup = () =>{
                 placeholder="Enter a password"/>
                 
                 <input type="button" value="Back to login" className="backToLogin"/>
-                <input type="button" value="Sign Up" className="SignUp2" />
+                
+                <input type="button"
+                onClick={register}
+                
+                value="Sign Up" className="SignUp2" />
             </form>
             </div>
         </>
