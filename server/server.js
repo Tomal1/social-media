@@ -7,11 +7,13 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(express.static("../src/App.js"));
+
 const db = require("./config/connection");
 
 
-app.get("/", (req, res, next) => {
-    db.query("SELECT * FROM username", (err, result) =>{
+app.get("/", (req, res) => {
+    db.query("SELECT * FROM user", (err, result) =>{
         if(err){
             throw err;
         }else{
@@ -20,19 +22,19 @@ app.get("/", (req, res, next) => {
     })
 })
 
+app.post("/Signup", (req, res)=>{
 
-app.post("/Signup", (req, res, next)=>{
-    
+    const username = req.body.username; 
+    const email = req.body.email; 
+    const password = req.body.password;  
 
-
-
-
-    db.query("INSERT INTO user (username, email, password) VALUES (?,?,?)", [username, email, password], (err, result)=>{
+    db.query("INSERT INTO user (username, email, password) VALUES (?,?,?)", 
+    [username, email, password], 
+    (err, result) => {
         if(err){
             throw err;
-        } else {
-            alert(`login created for ${username}`)
-        }
+        } 
+        return res.json(result);
     })
 })
 

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 //must first "npm i react-router-dom" to use this
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -20,7 +20,7 @@ function App() {
     <Router>
       <div>
         <Link to="/">login</Link>
-        <Link to="/Signup">Signup</Link>
+        
       </div>
 
       <Routes>
