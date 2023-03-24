@@ -18,11 +18,6 @@ function App() {
     <>
     <Header/>
     <Router>
-      <div>
-        <Link to="/">login</Link>
-        
-      </div>
-
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/Signup" element={<Signup/>}/>

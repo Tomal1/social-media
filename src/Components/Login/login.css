@@ -33,16 +33,20 @@ input{
    justify-content: center;
    align-items: center;
    margin-bottom: 5%;
-   border:1px solid black;
+   border: 2px solid black;
    width: 250px;
    height:40px;
    margin-left: 25px;
 }
 
-
 .modalLinks:hover{
    scale:1.05;
 }
+
+a{
+   all: unset;  
+}
+
 
 
 
