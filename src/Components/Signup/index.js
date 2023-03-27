@@ -6,7 +6,6 @@ import validation from "../loginValidation";
 //need this to replicate the fetch command
 import Axios from "axios";
 
-
 const Signup = () =>{
 
     const [values, setValues] = useState({
@@ -21,12 +20,10 @@ const Signup = () =>{
         setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
     }
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(setValues(validation(values)))
     }
-
 
 
     return(
