@@ -1,5 +1,7 @@
 const express = require("express");
 
+const cors = require("cors")
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -7,6 +9,9 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 // express by default dose not use json, this allow it
 app.use(express.json());
+
+//did not resolve net::ERR_CONNECTION_REFUSED
+app.use(cors());
 
 app.use(express.static("../src/App.js"));
 

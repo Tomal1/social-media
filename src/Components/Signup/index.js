@@ -20,13 +20,17 @@ const Signup = () =>{
         setValues((prev) => ({...prev, [event.target.name] /*detects changes in input*/: 
         [event.target.value]/*and then puts them into values object*/}))
     }
-
+   
+    // to test this both backend and client must be operating and dns cannot be blocked or you will get "net::ERR_CONNECTION_REFUSED"
     const handleSubmit = async (e) => {
         e.preventDefault();
 
- 
-       axios.post("http://localhost:3001/Signup", values)
+        axios.post("http://localhost:3001/Signup",values)
+        .then(res =>{
+            console.log(res)
             navigate("/")
+        })
+        .catch(err => console.log(err))
     
         
     }
