@@ -33,7 +33,7 @@ const Login = () =>{
                 <h2>Log In</h2>
                 <input type="email" placeholder="Email" className="Email" onChange={handleInput} name="email"/>
                 <input type="password" placeholder="Password" onChange={handleInput} name="password"/>
-                <Link to="/" className="Login modalLinks">login</Link>
+                <input type="submit" className="Login modalLinks" value="Log In"/>
                 <Link to="/Signup" className="SignUp modalLinks">Sign Up</Link>
             </form>
         </div>
