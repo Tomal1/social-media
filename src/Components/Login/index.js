@@ -8,8 +8,9 @@ const Login = () =>{
 
     return(
         <>
-        <div className="loginCon">
+        <div className="loginCon" action="">
             <form class="loginform">
+                <h2>Log In</h2>
                 <input type="text" placeholder="Username" className="Username"/>
                 <input type="password" placeholder="Password"/>
                 <Link to="/" className="Login modalLinks">login</Link>

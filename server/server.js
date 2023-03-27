@@ -22,8 +22,26 @@ app.get("/", (req, res) => {
     })
 })
 
-app.post("/Signup", (req, res)=>{
 
+app.get("/", (req,res)=>{
+
+    const sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+    
+    db.query(sql,
+        [
+        req.body.username,
+        req.body.password
+        ],
+    (err,result) =>{
+        if(err){
+            console.err("invalid user or password");
+        } else {
+            return res.json(result)
+        }
+    })
+})
+
+app.post("/Signup", (req, res)=>{
     const username = req.body.username; 
     const email = req.body.email; 
     const password = req.body.password;  
