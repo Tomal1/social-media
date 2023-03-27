@@ -16,8 +16,8 @@ const Signup = () =>{
             
             <form class="signUpForm">
                 <h2>Sign Up</h2>
-                <input type="text" placeholder="Enter a username name" className="Username2"/>
-                <input type="email" placeholder="Enter a valid email address"/>
+                <input type="text" placeholder="Enter a username" className="Username"/>
+                <input type="email" placeholder="Enter a valid email"/>
                 <input type="password" placeholder="Enter a password"/>
                 <Link to="/" className="Login modalLinks">Back to login</Link> 
                 <input type="button" value="Sign Up" className="SignUp2" />
