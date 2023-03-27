@@ -1,5 +1,5 @@
-INSERT INTO user ( username, email, password )
-VALUES ("The Great Gatsby", "TGGatyy191@xyz.co.uk", "123aaa" ),
-       ("Huckleberry Finn", "HFinny@xyz.co.uk", "123aaa"),
-       ("100 Years of Solitude", "100YS@xyz.co.uk", "123aaa"),
-       ("Things Fall Apart", "TFA@xyz.co.uk", "123aaa")
+INSERT INTO signUp ( username, email, password )
+VALUES ("GreatGatsby", "TGGatyy191@xyz.co.uk", "123aaa" ),
+       ("Huckleberry", "HFinny@xyz.co.uk", "132bbb"),
+       ("Solitude", "100YS@xyz.co.uk", "321ccc"),
+       ("Things", "TFA@xyz.co.uk", "xxx123ABC")

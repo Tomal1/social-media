@@ -5,6 +5,7 @@ const app = express();
 
 
 app.use(express.urlencoded({ extended: false }));
+// express by default dose not use json, this allow it
 app.use(express.json());
 
 app.use(express.static("../src/App.js"));
@@ -12,47 +13,34 @@ app.use(express.static("../src/App.js"));
 const db = require("./config/connection");
 
 
-app.get("/", (req, res) => {
-    db.query("SELECT * FROM user", (err, result) =>{
+app.get("/Signup", (req, res) => {
+    db.query("SELECT * FROM signUp", (err, data) =>{
         if(err){
             throw err;
         }else{
-            return res.json(result);
+            return res.json(data);
         }
     })
 })
 
 
-app.get("/", (req,res)=>{
-
-    const sql = "SELECT * FROM user WHERE username = ? AND password = ?";
-    
-    db.query(sql,
-        [
-        req.body.username,
-        req.body.password
-        ],
-    (err,result) =>{
-        if(err){
-            console.err("invalid user or password");
-        } else {
-            return res.json(result)
-        }
-    })
-})
 
 app.post("/Signup", (req, res)=>{
-    const username = req.body.username; 
-    const email = req.body.email; 
-    const password = req.body.password;  
 
-    db.query("INSERT INTO user (username, email, password) VALUES (?,?,?)", 
-    [username, email, password], 
-    (err, result) => {
+    const values =[
+    username = req.body.username, 
+    email = req.body.email,
+    password = req.body.password
+    ]
+
+    db.query("INSERT INTO signUp (`username`, `email`, `password`) VALUES (?)", 
+    [values], 
+    (err, data) => {
         if(err){
             throw err;
-        } 
-        return res.json(result);
+        } else{
+        return res.json("new user successfully created");
+        }
     })
 })
 
