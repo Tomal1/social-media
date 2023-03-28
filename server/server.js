@@ -32,8 +32,8 @@ app.get("/Signup", (req, res) => {
 
 
 app.get("/", (req, res) => {
-    const sql = "SELECT * FROM signUp WHERE username = ? AND password = ?";
-    const values = [req.body.username,
+    const sql = "SELECT * FROM signUp WHERE email = ? AND password = ?";
+    const values = [req.body.email,
                     req.body.password]
 
     db.query(sql, values, (err, data) =>{
