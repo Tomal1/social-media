@@ -41,7 +41,7 @@ const Signup = () =>{
                     <h2>Sign Up</h2>
                     <input type="text" placeholder="Enter a username" className="Username" onChange={handleInput} name="username"/>
                     <input type="email" placeholder="Enter a valid email" onChange={handleInput} name="email"/>
-                    <input type="text" placeholder="Enter a password" onChange={handleInput} name="password"/>
+                    <input type="password" placeholder="Enter a password" onChange={handleInput} name="password"/>
                     <Link to="/" className="Login modalLinks">Back to login</Link> 
                     <input type="submit" className="Create modalLinks" value="Create new account"/>
                 </form>
