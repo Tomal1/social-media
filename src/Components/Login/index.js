@@ -23,7 +23,7 @@ const Login = () =>{
 
         axios.get("http://localhost:3001/", values)
         .then(res=>{
-            console.log(`login was successful ${res}`)
+            console.log(res)
         })
         .catch(err=> console.log(err))
         
