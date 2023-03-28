@@ -7,7 +7,7 @@ The application uses react for rendering the client side, Node/Express for the s
 
 # Usage
 
-As the application is launched the client is instantly taken to a login page and if they are not already a member than there is also an option to register a new account.
+As the application is launched the client is instantly taken to a login page and if the client is not already a member than there is an option to sign up to a new account.
 
     deployed URL: https://social-m.herokuapp.com/
 
@@ -16,5 +16,5 @@ As the application is launched the client is instantly taken to a login page and
 The functionality of this application can be tested without having to create a new account by using the guest1 login details:
 
     email: guest1@123.com
-    
+
     password: 123zxc
