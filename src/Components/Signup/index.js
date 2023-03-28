@@ -32,8 +32,7 @@ const Signup = () =>{
         })
         .catch(err => console.log(err))
     }
-
-
+    
     return(
         <>
             <div className="signUpCon">
