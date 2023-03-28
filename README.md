@@ -9,6 +9,12 @@ The application uses react for rendering the client side, Node/Express for the s
 
 As the application is launched the client is instantly taken to a login page and if they are not already a member than there is also an option to register a new account.
 
-deployed URL: https://social-m.herokuapp.com/
+    deployed URL: https://social-m.herokuapp.com/
 
-GitHub repo: https://github.com/Tomal1/social-media
+    GitHub repo: https://github.com/Tomal1/social-media
+
+The functionality of this application can be tested without having to create a new account by using the guest1 login details:
+
+    email: guest1@123.com
+    
+    password: 123zxc
