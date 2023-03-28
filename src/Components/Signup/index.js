@@ -31,8 +31,6 @@ const Signup = () =>{
             navigate("/")
         })
         .catch(err => console.log(err))
-    
-        
     }
 
 
@@ -46,7 +44,7 @@ const Signup = () =>{
                     <input type="email" placeholder="Enter a valid email" onChange={handleInput} name="email"/>
                     <input type="text" placeholder="Enter a password" onChange={handleInput} name="password"/>
                     <Link to="/" className="Login modalLinks">Back to login</Link> 
-                    <button className="Create modalLinks" onClick={handleSubmit}>Create</button>
+                    <input type="submit" className="Create modalLinks" value="Create new account"/>
                 </form>
             </div>
         </>

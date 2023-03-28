@@ -19,16 +19,31 @@ const db = require("./config/connection");
 
 
 app.get("/Signup", (req, res) => {
-    db.query("SELECT * FROM signUp", (err, data) =>{
+    const sql = "SELECT * FROM signUp";
+
+    db.query(sql, (err, data) =>{
         if(err){
             throw err;
         }else{
             return res.json(data);
         }
-    })
-})
+    });
+});
 
 
+app.get("/", (req, res) => {
+    const sql = "SELECT * FROM signUp WHERE username = ? AND password = ?";
+    const values = [req.body.username,
+                    req.body.password]
+
+    db.query(sql, values, (err, data) =>{
+        if(err){
+            throw err;
+        }else{
+            return res.json(data);
+        }
+    });
+});
 
 app.post("/Signup", (req, res)=>{
 
@@ -44,7 +59,7 @@ app.post("/Signup", (req, res)=>{
         if(err){
             throw err;
         } else{
-        return res.json("new user successfully created");
+            return res.json(`new user successfully created ${data}`);
         }
     })
 })
