@@ -25,7 +25,9 @@ const Signup = () =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post(`http://localhost:${process.env.PORT}/Signup`,values)
+        const PORT = process.env.PORT || 3001;
+
+        axios.post(`http://localhost:${PORT}/Signup`,values)
         .then(res =>{
             console.log(res)
             navigate("/")
