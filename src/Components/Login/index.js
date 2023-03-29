@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 
 import axios from "axios";
-require("dotenv").config();
 
 const Login = () =>{
 
