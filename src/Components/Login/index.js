@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-
+const navigate = useNavigate();
 import axios from "axios";
 
 const Login = () =>{
@@ -11,15 +11,20 @@ const Login = () =>{
         password: ""
     })
 
-    const navigate = useNavigate();
+    
+//this function will track what the client dose and then store into the state object above
+    const clientInput = (e) => {
 
-    const handleInput = (event) => {
-        setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
+        setValues(value => ({...value, 
+            [e.target.nameOfInput]: //detect changes typed in by client
+            [e.target.valueInputted] //then store that into value attribute for the corresponding input field
+        }))
     }
 
     // stop our form form doing the default thing which is to do nothing
     const handleSubmit = (e) => {
         e.preventDefault();
+
 
         /*
         resolved: if you get "net::ERR_CONNECTION_REFUSED" in heroku when fetching data, it is because 
@@ -42,8 +47,8 @@ const Login = () =>{
         <div className="loginCon">
             <form className="loginform" onSubmit={handleSubmit}> 
                 <h2>Log In</h2>
-                <input type="email" placeholder="Email" className="Email" onChange={handleInput} name="email"/>
-                <input type="password" placeholder="Password" onChange={handleInput} name="password"/>
+                <input type="email" placeholder="Email" className="Email" valueInputted={values.email} onChange={clientInput} nameOfInput="email"/>
+                <input type="password" placeholder="Password" valueInputted={values.password} onChange={clientInput} nameOfInput="password"/>
                 <input type="submit" className="Login modalLinks" value="Log In"/>
                 <Link to="/Signup" className="SignUp modalLinks">Sign Up</Link>
             </form>

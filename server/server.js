@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
         if(err){
             throw err;
         }else{
-            return res.json(data);
+            return res.json(data + "yes, yes");   
         }
     });
 });

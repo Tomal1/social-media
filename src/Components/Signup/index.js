@@ -22,7 +22,7 @@ const Signup = () =>{
     }
    
     // to test this both backend and client must be operating and dns cannot be blocked or you will get "net::ERR_CONNECTION_REFUSED"
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         /*
