@@ -21,9 +21,7 @@ const Login = () =>{
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const PORT = process.env.PORT || 3001;
-
-        axios.get(`http://localhost:${PORT}`, values)
+        axios.get(`http://localhost:${process.env.PORT || 3001}`, values)
         .then(res=>{
             console.log("successfully logged in")
             console.log(res)
