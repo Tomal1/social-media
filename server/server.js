@@ -3,7 +3,7 @@ const cors = require("cors")
 
 require("dotenv").config();
 
-const PORT = process.env.PORT /*|| 3001*/;
+const PORT = 3001;
 const app = express();
 
 
@@ -65,7 +65,6 @@ app.post("/Signup", (req, res)=>{
     })
 })
 
-
-app.listen(PORT, () =>{
-    console.log(`listening to port ${PORT}`);
+app.listen(process.env.PORT || PORT, () =>{
+    console.log(`listening to port ${process.env.PORT || PORT}`);
 })
