@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 //need this to replicate the fetch command
 import axios from "axios";
+require("dotenv").config();
 
 const Signup = () =>{
 
