@@ -21,6 +21,12 @@ const Login = () =>{
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        /*
+        resolved: if you get "net::ERR_CONNECTION_REFUSED" in heroku when fetching data, it is because 
+        you cant hard code URL like this: "http://localhost:3001" 
+        should be like this instead: `http://localhost:${process.env.PORT || 3001}`
+        */
+
         axios.get(`http://localhost:${process.env.PORT || 3001}`, values)
         .then(res=>{
             console.log("successfully logged in")
