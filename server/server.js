@@ -6,8 +6,9 @@ require("dotenv").config();
 const PORT = 3001;
 const app = express();
 
+// allows us to use special characters in url
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.urlencoded({ extended: false }));
 // express by default dose not use json, this allow it
 app.use(express.json());
 
@@ -20,6 +21,9 @@ const db = require("./config/connection");
 
 
 app.get("/Signup", (req, res) => {
+
+
+
     const sql = "SELECT * FROM signUp";
 
     db.query(sql, (err, data) =>{
@@ -33,6 +37,8 @@ app.get("/Signup", (req, res) => {
 
 
 app.get("/", (req, res) => {
+
+    console.log(req.body)
     const sql = "SELECT * FROM signUp WHERE email = ? AND password = ?";
     const values = [req.body.email,
                     req.body.password]
@@ -41,10 +47,30 @@ app.get("/", (req, res) => {
         if(err){
             throw err;
         }else{
-            return res.json(data + "yes, yes");   
+            return res.json(data);   
         }
     });
 });
+
+
+app.delete("/Profile", (req, res)=>{
+
+    const values = [req.body.email, 
+    req.body.password]
+
+    const sql =  `DELETE FROM signUp WHERE email = ? AND password = ?`; // Always use backticks when not hard coding
+    
+    db.query(sql,
+        values,
+    (err,data) => {
+        if(err){
+            throw err;
+        } else{
+            console.log(data)
+            return res.json("deleted user successfully");
+        }
+    })
+})
 
 app.post("/Signup", (req, res)=>{
 

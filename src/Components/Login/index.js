@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-const navigate = useNavigate();
+
 import axios from "axios";
 
 const Login = () =>{
@@ -10,7 +10,8 @@ const Login = () =>{
         email: "",
         password: ""
     })
-
+// navigate has to be in the function
+const navigate = useNavigate();
     
 //this function will track what the client dose and then store into the state object above
     const clientInput = (e) => {
