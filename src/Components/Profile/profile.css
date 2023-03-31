@@ -1,0 +1,39 @@
+.ProfileCon{
+    height: 80vh;
+    background-color: bisque;
+    text-align: center;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly; */
+}
+
+.ProfilePicCon{
+    height:200px;
+    width: 200px;
+    border:1px solid black;
+    border-radius: 10%;
+  
+}
+
+.AboutCon{
+    border:1px solid black;
+    height:200px;
+    width: 300px;
+    border-radius: 10%;
+    /* margin:20px 0px 0px 0px; */
+}
+
+.RantCon{
+    border:1px solid black;
+    height:200px;
+    width: 300px;
+    border-radius: 10%;
+    /* margin:20px 0px 0px 0px; */
+    
+
+}
+
+.Post{
+    width: 100px;
+}
