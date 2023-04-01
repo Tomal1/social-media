@@ -1,9 +1,15 @@
-const Lvalidation = (values) => {
+const SUvalidation = (values) => {
     // we are going to store our errors in this object
     const error = {};
 
     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+
+    if(values.username === ""){
+        error.username = "Username field is empty";
+    }else {
+        error.username = "";
+    }
 
     if(values.email === ""){
         error.email = "Email field is empty";
@@ -25,4 +31,4 @@ const Lvalidation = (values) => {
 
 }
 
-export default Lvalidation;
+export default SUvalidation;

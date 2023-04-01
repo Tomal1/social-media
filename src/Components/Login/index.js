@@ -5,28 +5,25 @@ import Lvalidation from "./Lvaladation";
 import axios from "axios";
 
 const Login = () =>{
-
     // store the initial values for login
     const [values, setValues] = useState({
         email: "",
         password: ""
-    })
+    });
 
 
 // navigate has to be in the function
 const navigate = useNavigate();
     
-
 //this function will track what the client dose and then store into the state object above
     const clientInput = (e) => {
-
         setValues(values => ({...values, 
             [e.target.nameOfInput]: //detect changes typed in by client
             [e.target.valueInputted] //then store that into value attribute for the corresponding input field
         }))
     }
 
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({});
 
 
     const handleSubmit = (e) => {
@@ -60,7 +57,6 @@ const navigate = useNavigate();
                 {errors.email && <span className="text-danger">{errors.email}</span>}
                 <input type="password" placeholder="Password" valueInputted={values.password} onChange={clientInput} nameOfInput="password"/>
                 <span>{errors.password && <span>{errors.password}</span>}</span>
-                
                 <input type="submit" className="Login modalLinks" value="Log In"/>
                 <Link to="/Signup" className="SignUp modalLinks">Sign Up</Link>
             </form>
