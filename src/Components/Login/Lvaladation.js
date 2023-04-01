@@ -3,6 +3,7 @@ const Lvalidation = (values) => {
     const error = {};
 
     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // 1 lower case 1 upper case 1 numerical value and minimum 8 characters
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
     if(values.email === ""){
