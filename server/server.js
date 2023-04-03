@@ -21,11 +21,8 @@ const db = require("./config/connection");
 
 
 app.get("/Signup", (req, res) => {
-
-
-
+    
     const sql = "SELECT * FROM signUp";
-
     db.query(sql, (err, data) =>{
         if(err){
             throw err;
@@ -34,7 +31,6 @@ app.get("/Signup", (req, res) => {
         }
     });
 });
-
 
 app.get("/", (req, res) => {
 
@@ -52,8 +48,7 @@ app.get("/", (req, res) => {
     });
 });
 
-
-app.delete("/Profile", (req, res)=>{
+app.delete("/DeleteAccount", (req, res)=>{
 
     const values = [req.body.email, 
     req.body.password]

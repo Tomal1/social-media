@@ -37,14 +37,13 @@ const Login = () =>{
         */
 
         axios.get(`http://localhost:${process.env.PORT || 3001}`, values)
-        .then(res=>{
-            console.log("successfully logged in")
-            console.log(res)
-            navigate("/Profile")
-        })
-        .catch(err=> console.log(err))
-        
-    }
+            .then(res=>{
+                console.log("successfully logged in")
+                console.log(res)
+                navigate("/Profile")
+            })
+            .catch(err=> console.log(err))
+        }
 
     return(
         <>
