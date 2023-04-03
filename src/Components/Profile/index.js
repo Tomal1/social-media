@@ -6,7 +6,14 @@ const profile = () => {
     return(
         <>
             <div className="ProfileCon">
-
+               {/* need to to change this to a sepperate componant later */}
+                <nav>
+                    <ul>
+                        <li>News Feed</li>
+                        <li>Delete Account</li>
+                        <li>Log Out</li>
+                    </ul>
+                </nav>
                 <form className="ProfilePicCon">
                     <label>Profile Picture</label>
                     <img className="ProfilePic" alt="picture of person who likes to rant"/>
@@ -16,12 +23,6 @@ const profile = () => {
                     <label>About</label>
                     <textarea type="textarea" rows="8" cols="30" placeholder="Tell the world something about yourself"/>
                     <input type="submit" value="Done" className="AboutBTN Post"/>
-                </form>
-
-                <form className="RantCon">
-                    <label>what is your Rant?</label>
-                    <textarea type="textarea" rows="8" cols="30" placeholder="What are you ranting on about now?"/>
-                    <input type="submit" value="Done" className="RantBTN Post"/>
                 </form>
             </div>
             

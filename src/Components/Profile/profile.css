@@ -1,3 +1,23 @@
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    height: 30px;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+ul li{
+    color: black;
+    display: inline;
+    margin:0px 10px 0px 10px 
+}
+
 .ProfileCon{
     height: 80vh;
     background-color: bisque;
@@ -22,16 +42,6 @@
     width: 300px;
     border-radius: 10%;
     /* margin:20px 0px 0px 0px; */
-}
-
-.RantCon{
-    border:1px solid black;
-    height:200px;
-    width: 300px;
-    border-radius: 10%;
-    /* margin:20px 0px 0px 0px; */
-    
-
 }
 
 .Post{
