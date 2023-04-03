@@ -1,5 +1,5 @@
 
-ul{
+nav ul{
     list-style: none;
     padding: 0px;
     margin: 0px;
@@ -12,10 +12,17 @@ ul{
 }
 
 
-ul li{
+nav ul .navLinkes{
     color: black;
     display: inline;
     margin:0px 10px 0px 10px 
+}
+
+nav ul .navLinkes:hover{
+    background:black;
+    opacity: 0.5;
+    cursor: pointer;
+    color: white;
 }
 
 .ProfileCon{

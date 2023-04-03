@@ -10,6 +10,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Header from './Components/Header';
 import Profile from "./Components/Profile";
+import DeleteAccount from "./Components/DeleteAccount";
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Login/>}/>
         <Route path="/Signup" element={<Signup/>}/>
         <Route path="/Profile" element={ <Profile/>}/>
+        <Route path="/DeleteAccount" element={<DeleteAccount/>}/>
       </Routes>
     </Router>
     </>

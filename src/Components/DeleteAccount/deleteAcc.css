@@ -1,0 +1,14 @@
+.deleteCon{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ }
+ 
+ .deleteForm{
+    margin:15vh 0px 0px 0px;
+    border: 1px solid black;
+    height:400px;
+    width: 300px;
+    border-radius: 5%;
+ 
+ }

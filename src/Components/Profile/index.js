@@ -1,17 +1,17 @@
 import React from "react";
 import "./profile.css"
-
+import { Link } from "react-router-dom";
 
 const profile = () => {
     return(
         <>
             <div className="ProfileCon">
-               {/* need to to change this to a sepperate componant later */}
+               {/* need to to change this to a separate component later */}
                 <nav>
                     <ul>
-                        <li>News Feed</li>
-                        <li>Delete Account</li>
-                        <li>Log Out</li>
+                        <li className="navLinkes">News Feed</li>
+                        <Link to ="/DeleteAccount" className="navLinkes">Delete Account</Link>
+                        <li className="navLinkes">Log Out</li>
                     </ul>
                 </nav>
                 <form className="ProfilePicCon">
