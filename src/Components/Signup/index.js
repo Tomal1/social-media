@@ -32,7 +32,12 @@ const Signup = () =>{
         e.preventDefault();
         
         //whatever is returned from Lvalidation we will store it as an object in errors state variable as an object
-        setErrors(SUvalidation(values))
+
+        const condition = SUvalidation(values);
+
+        if(condition.username !== "" && condition.email !== "" && condition.password !== ""){
+            return setErrors(SUvalidation(values));
+        }
 
         /*
         resolved: if you get "net::ERR_CONNECTION_REFUSED" in heroku when fetching data, it is because 
@@ -56,7 +61,7 @@ const Signup = () =>{
                     <h2>Sign Up</h2>
                     <input type="text" placeholder="Enter a username" className="Username" value={values.username} onChange={handleInput} name="username"/>
                     {errors.username && <span className="text-danger">{errors.username}</span>}
-                    <input type="email" placeholder="Enter a valid email" value={values.email} onChange={handleInput} name="email"/>
+                    <input type="email" placeholder="Enter a valid email" className="Email" value={values.email} onChange={handleInput} name="email"/>
                     {errors.email && <span className="text-danger">{errors.email}</span>}
                     <input type="password" placeholder="Enter a password" value={values.password} onChange={handleInput} name="password"/>
                     {errors.password && <span className="text-danger">{errors.password}</span>}

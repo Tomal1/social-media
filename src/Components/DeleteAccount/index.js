@@ -13,7 +13,6 @@ const DeleteAccount = () => {
     const navigate = useNavigate();
         
     // const [errors, setErrors] = useState({})
-
     const handleInput = (e) => {
         setValues(values => ({...values, 
             [e.target.name]:
@@ -25,7 +24,10 @@ const DeleteAccount = () => {
         e.preventDefault();    
         // setErrors(Lvalidation(values));
 
-        /*during delete fetch request one must use {data: statVariableName} or it wont send data to the backend */
+        /*
+        delete fetch must use the keyword "data" inside of curly brackets 
+        {data: stateVariableName} or it wont send data to the backend 
+        */
 
         axios.delete(`http://localhost:${process.env.PORT || 3001}/DeleteAccount`, { data: values })
         .then(res=>{
