@@ -39,14 +39,13 @@ nav ul .navLinkes:hover{
     height:200px;
     width: 200px;
     border:1px solid black;
-    border-radius: 10%;
+    border-radius: 50%;
   
 }
 
 .AboutCon{
     border:1px solid black;
-    width: 300px;
-    border-radius: 10%;
+    width: 500px;
     /* margin:20px 0px 0px 0px; */
 }
 
