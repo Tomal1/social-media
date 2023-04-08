@@ -23,9 +23,10 @@ const Profile = () => {
     return(
         <>
             <div className="ProfileCon">
-               {/* need to to change this to a separate component later */}
+               {/* need to to change this to be a separate component later */}
                 <nav>
                     <ul>
+                        <Link to ="/Profile" className="navLinkes">Profile</Link>
                         <li className="navLinkes">News Feed</li>
                         <Link to ="/DeleteAccount" className="navLinkes">Delete Account</Link>
                         <li className="navLinkes">Log Out</li>

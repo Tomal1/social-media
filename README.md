@@ -16,5 +16,4 @@ As the application is launched the client is instantly taken to a login page and
 The functionality of this application can be tested without having to create a new account by using the guest1 login details:
 
     email: TFA@xyz.co.uk
-
     password: xxx123ABC

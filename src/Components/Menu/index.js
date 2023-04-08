@@ -4,6 +4,7 @@ const Menu = () => {
     return(
         <li className="menu">Menu
             <ul>
+                <li>Profile</li>
                 <li>News Feed</li>
                 <li>Delete Account</li>
                 <li>Log Out</li>
