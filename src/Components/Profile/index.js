@@ -11,7 +11,7 @@ const Profile = () => {
 
     axios.get(`http://localhost:${process.env.PORT || 3001}/Profile`)
     .then(res =>{
-            setAbout(res.data[0].about)
+        console.log(res)
     })
     .catch(err => console.log(err))
 
@@ -29,8 +29,8 @@ const Profile = () => {
                     {/* <textarea type="textarea" rows="8" cols="30" placeholder="Tell the world something about yourself"/>
                     <input type="submit" value="Done" className="AboutBTN Post"/> */}
                     {about ? <p>{about}</p> : null}
-                    <input type="submit" value="edit"/>
-                    <input type="submit" value="delete"/>
+                    {/* <input type="submit" value="edit"/>
+                    <input type="submit" value="delete"/> */}
                 </form>
             </div>
             

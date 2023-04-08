@@ -10,9 +10,8 @@ CREATE TABLE signUp (
 );
 
 CREATE TABLE profile (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    profile_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     picture BLOB,
     about VARCHAR(1000),
-    profile_id INT,
     FOREIGN KEY (profile_id) REFERENCES signUp(id)
 );

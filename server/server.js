@@ -33,8 +33,9 @@ app.get("/Signup", (req, res) => {
 });
 
 app.get("/Profile", (req,res)=>{
-    const sql = `SELECT * FROM signUp RIGHT JOIN profile ON signUp.id=profile.id`;
-    db.query(sql,(err,data)=>{
+    values = [req.body.profile_id]
+    const sql = `SELECT * FROM signUp LEFT JOIN profile ON signUp.id=profile.profile_id WHERE profile_id = ?`;
+    db.query(sql,values,(err,data)=>{
         if(err){
             throw err;
         }else{
