@@ -16,4 +16,3 @@ CREATE TABLE profile (
     profile_id INT,
     FOREIGN KEY (profile_id) REFERENCES signUp(id)
 );
-

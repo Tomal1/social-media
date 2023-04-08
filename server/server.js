@@ -32,9 +32,18 @@ app.get("/Signup", (req, res) => {
     });
 });
 
-app.get("/", (req, res) => {
+app.get("/Profile", (req,res)=>{
+    const sql = `SELECT * FROM signUp RIGHT JOIN profile ON signUp.id=profile.id`;
+    db.query(sql,(err,data)=>{
+        if(err){
+            throw err;
+        }else{
+            return res.json(data);   
+        }
+    })
+})
 
-    console.log(req.body)
+app.get("/", (req, res) => {
     const sql = "SELECT * FROM signUp WHERE email = ? AND password = ?";
     const values = [req.body.email,
                     req.body.password]
@@ -45,7 +54,8 @@ app.get("/", (req, res) => {
         }else{
             return res.json(data);   
         }
-    });
+    })
+
 });
 
 app.delete("/DeleteAccount", (req, res)=>{
