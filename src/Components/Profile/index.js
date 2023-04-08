@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./profile.css"
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Nav from "../Nav";
 
 const Profile = () => {
 
@@ -23,15 +24,7 @@ const Profile = () => {
     return(
         <>
             <div className="ProfileCon">
-               {/* need to to change this to be a separate component later */}
-                <nav>
-                    <ul>
-                        <Link to ="/Profile" className="navLinkes">Profile</Link>
-                        <li className="navLinkes">News Feed</li>
-                        <Link to ="/DeleteAccount" className="navLinkes">Delete Account</Link>
-                        <li className="navLinkes">Log Out</li>
-                    </ul>
-                </nav>
+                <Nav/>
                 <form className="ProfilePicCon">
                     <label>Profile Picture</label>
                     <img className="ProfilePic" alt="picture of person who likes to rant"/>
