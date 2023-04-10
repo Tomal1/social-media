@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./login.css";
 import Lvalidation from "./Lvaladation";
 import axios from "axios";
 
+
 const Login = () =>{
     // initial input values set to empty string but will be populated as client inputs
+    const { username } = useParams();
+    
     const [values, setValues] = useState({
         email: "",
         password: ""
@@ -47,7 +50,7 @@ const Login = () =>{
                 .then(res=>{
                     console.log("successfully logged in")
                     console.log(res)
-                    navigate("/Profile")
+                    navigate(`/Profile/${username}`)
                 })
                 .catch(err=> console.log(err))
         }
