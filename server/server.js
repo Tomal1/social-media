@@ -32,9 +32,12 @@ app.get("/Signup", (req, res) => {
     });
 });
 
-app.get("/Profile", (req,res)=>{
-    values = [req.body.profile_id]
-    const sql = `SELECT * FROM signUp LEFT JOIN profile ON signUp.id=profile.profile_id WHERE profile_id = ?`;
+
+
+
+app.get("/Profile/:username", (req,res)=>{
+    values = [req.params.username]
+    const sql = `SELECT * FROM signUp LEFT JOIN profile ON signUp.id=profile.profile_id WHERE username = ?`;
     db.query(sql,values,(err,data)=>{
         if(err){
             throw err;
@@ -42,6 +45,7 @@ app.get("/Profile", (req,res)=>{
             return res.json(data);   
         }
     })
+
 })
 
 app.get("/", (req, res) => {

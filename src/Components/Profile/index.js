@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import "./profile.css"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import Nav from "../Nav";
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
 
+  /*Note this is how we use a dynamic URL 
+  1) { username } = useParams(); will get the path specified in App.js line 27 for url
+  */
+    const { username } = useParams();
 
     const [about, setAbout] = useState("");
 
-    axios.get(`http://localhost:${process.env.PORT || 3001}/Profile`)
-    .then(res =>{
-        console.log(res)
-    })
-    .catch(err => console.log(err))
+      // 2) we enter the username as a dynamic (changeable) value
+        axios.get(`http://localhost:${process.env.PORT || 3001}/Profile/${username}`)
+        .then(res =>{
+            console.log(res.data[0].about)
+                setAbout(res.data[0].about)
+        })
+        .catch(err => console.log(err))
 
     return(
         <>
@@ -21,7 +28,7 @@ const Profile = () => {
                 <Nav/>
                 <form className="ProfilePicCon">
                     <label>Profile Picture</label>
-                    <img className="ProfilePic" alt="picture of person who likes to rant"/>
+                    <img className="ProfilePic" alt="user"/>
                 </form>
 
                 <form className="AboutCon">
