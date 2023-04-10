@@ -36,8 +36,8 @@ const Profile = () => {
                     {/* <textarea type="textarea" rows="8" cols="30" placeholder="Tell the world something about yourself"/>
                     <input type="submit" value="Done" className="AboutBTN Post"/> */}
                     {about ? <p>{about}</p> : null}
-                    {/* <input type="submit" value="edit"/>
-                    <input type="submit" value="delete"/> */}
+                    <input type="submit" value="edit"/>
+                    <input type="submit" value="delete"/>
                 </form>
             </div>
             
