@@ -33,13 +33,12 @@ app.get("/Signup", (req, res) => {
 });
 
 
-
-
-
-
 app.post("/", (req, res) => {
-
-
+/*
+    OK so you have to use POST instead of GET method in the frontend to retrieve data when using req.body
+    in the backend; this is a problem with chrome not axios.
+    (SO THIS IS ACTUALLY A GET ROUTE NOT A POST)
+*/
     const sql = "SELECT * FROM signUp WHERE email = ? AND password = ?";
     const values = [req.body.email,
                     req.body.password]
@@ -50,7 +49,6 @@ app.post("/", (req, res) => {
             return res.json(data);   
         }
     })
-
 });
 
 

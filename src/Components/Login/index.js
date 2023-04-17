@@ -53,7 +53,7 @@ const Login = () =>{
                 */
                 .then(res=>{
                      console.log(res)
-                    navigate(`/${res.username}`)
+                    // navigate(`/${res.username}`)
 
                 })
                 .catch(err=> console.log(err))
