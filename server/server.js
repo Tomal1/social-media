@@ -35,10 +35,15 @@ app.get("/Signup", (req, res) => {
 
 
 
-app.get("/Profile/:username", (req,res)=>{
-    values = [req.params.username]
-    const sql = `SELECT * FROM signUp LEFT JOIN profile ON signUp.id=profile.profile_id WHERE username = ?`;
-    db.query(sql,values,(err,data)=>{
+
+
+app.post("/", (req, res) => {
+
+
+    const sql = "SELECT * FROM signUp WHERE email = ? AND password = ?";
+    const values = [req.body.email,
+                    req.body.password]
+    db.query(sql, values, (err, data) =>{
         if(err){
             throw err;
         }else{
@@ -46,14 +51,13 @@ app.get("/Profile/:username", (req,res)=>{
         }
     })
 
-})
+});
 
-app.get("/", (req, res) => {
-    const sql = "SELECT * FROM signUp WHERE email = ? AND password = ?";
-    const values = [req.body.email,
-                    req.body.password]
 
-    db.query(sql, values, (err, data) =>{
+app.get("/:username", (req,res)=>{
+    values = [req.params.username]
+    const sql = `SELECT * FROM signUp LEFT JOIN profile ON signUp.id=profile.profile_id WHERE username = ?`;
+    db.query(sql,values,(err,data)=>{
         if(err){
             throw err;
         }else{

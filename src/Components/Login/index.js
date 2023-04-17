@@ -46,11 +46,15 @@ const Login = () =>{
         should be like this instead: `http://localhost:${process.env.PORT || 3001}`
         */
 
-                axios.get(`http://localhost:${process.env.PORT || 3001}`, values)
+                axios.post(`http://localhost:${process.env.PORT || 3001}`,values)
+                /*
+                OK so you have to use POST instead of GET method in the frontend to retrieve data when using req.body
+                in the backend; this is a problem with chrome not axios
+                */
                 .then(res=>{
-                    console.log("successfully logged in")
-                    console.log(res)
-                    navigate(`/Profile/${username}`)
+                     console.log(res)
+                    navigate(`/${res.username}`)
+
                 })
                 .catch(err=> console.log(err))
         }

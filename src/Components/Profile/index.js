@@ -15,7 +15,7 @@ const Profile = () => {
     const [about, setAbout] = useState("");
 
       // 2) we enter the username as a dynamic (changeable) value
-        axios.get(`http://localhost:${process.env.PORT || 3001}/Profile/${username}`)
+        axios.get(`http://localhost:${process.env.PORT || 3001}/${username}`)
         .then(res =>{
             console.log(res.data[0].about)
                 setAbout(res.data[0].about)
