@@ -53,7 +53,8 @@ const Login = () =>{
                 */
                 .then(res=>{
                      console.log(res)
-                    // navigate(`/${res.username}`)
+                     const user = res.data[0].username;
+                    navigate(`/${user}`)
 
                 })
                 .catch(err=> console.log(err))
